@@ -151,7 +151,7 @@ func (pl *PrList) PushList(other *PrList) {
 }
 
 // Pop returns the first element.Value of prlist pl and remove it.
-func (pl *PrList) Pop() (v interface{}) {
+func (pl *PrList) Pop() interface{} {
 	e := pl.l.Front()
 	if e != nil {
 		return pl.Remove(e.Value.(*Element))

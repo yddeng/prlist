@@ -8,6 +8,7 @@ import (
 func TestNew(t *testing.T) {
 	pl := New()
 
+	// push
 	pl.Push(1, 2)
 	pl.Push(2, 4)
 	pl.Push(3, 2)
@@ -17,30 +18,28 @@ func TestNew(t *testing.T) {
 	pl.Push(7, 5)
 	pl.Push(8)
 
-	pl.test()
+	// range
 	for e := pl.Front(); e != nil; e = e.Next() {
 		t.Log(e.Value)
 	}
+
 	fmt.Println()
+	// remove
 	t.Log(pl.Remove(e))
 	pl.Push(9, 4)
-	fmt.Println()
 
+	fmt.Println()
+	// push list
 	pl2 := New()
 	pl2.PushList(pl)
 	pl.PushList(pl)
 
-	//t.Log(pl.Len())
+	// pop
 	for i := pl.Len(); i > 0; i-- {
 		t.Log(pl.Pop())
 	}
-	pl.test()
-	pl2.test()
+	fmt.Println()
 	for i := pl2.Len(); i > 0; i-- {
 		t.Log(pl2.Pop())
 	}
-}
-
-func (pl *PrList) test() {
-	fmt.Println(pl.l.Len(), pl.gl.Len())
 }
