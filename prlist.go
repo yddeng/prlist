@@ -49,13 +49,6 @@ func New() *PrList {
 	}
 }
 
-// Init initializes or clears prlist pl.
-func (pl *PrList) Init() *PrList {
-	pl.l.Init()
-	pl.gl.Init()
-	return pl
-}
-
 // Len returns the number of elements of prlist pl.
 // The complexity is O(1).
 func (pl *PrList) Len() int {

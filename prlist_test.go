@@ -1,6 +1,7 @@
 package prlist
 
 import (
+	"container/list"
 	"fmt"
 	"testing"
 )
@@ -41,5 +42,21 @@ func TestNew(t *testing.T) {
 	fmt.Println()
 	for i := pl2.Len(); i > 0; i-- {
 		t.Log(pl2.Pop())
+	}
+}
+
+func TestList(t *testing.T) {
+	l := list.New()
+	t.Logf("len:%d list:%v \n", l.Len(), l)
+	e1 := l.PushBack(1)
+	t.Logf("len:%d list:%v \n", l.Len(), l)
+	l.Init()
+	t.Logf("len:%d list:%v \n", l.Len(), l)
+	l.Remove(e1)
+	t.Logf("len:%d list:%v \n", l.Len(), l)
+	l.PushBack(2)
+	t.Logf("len:%d list:%v \n", l.Len(), l)
+	for e := l.Front(); e != nil; e = e.Next() {
+		t.Log(e.Value)
 	}
 }

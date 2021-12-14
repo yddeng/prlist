@@ -11,7 +11,6 @@ func (e *Element) Next() *Element
 
 type PrList 
 func New() *PrList 
-func (pl *PrList) Init() *PrList
 func (pl *PrList) Len() int 
 func (pl *PrList) Front() *Element
 func (pl *PrList) Back() *Element 
